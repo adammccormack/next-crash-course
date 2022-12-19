@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import articleStyles from '../styles/Article.module.css'
+import PropTypes from 'prop-types'
 
-const ArticleItem = ({ article }) => {
+
+const ArticleItem = ({article}: any) => {
   return (
     <Link href="/article/[id]" as={`/article/${article.id}`}>
         <div className={articleStyles.card}>
