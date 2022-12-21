@@ -1,3 +1,4 @@
+import { server } from '../config'
 import Head from 'next/head'
 import ArticleList from '../components/ArticleList'
 
@@ -9,13 +10,13 @@ export default function Home({ articles }) {
         <title>All The Newz</title>
         <meta name='keyswords' content='news, news articles' />
       </Head>
-      <ArticleList articles={articles}/> 
-    </div> 
+      <ArticleList articles={articles}/>
+    </div>
   )
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`/api/articles`)
+  const res = await fetch(`${server}/api/articles`)
   const articles = await res.json()
 
   return {
